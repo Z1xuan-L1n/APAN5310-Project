@@ -207,6 +207,17 @@ ORDER BY
   "public"."marketing_performance"."channel" ASC,
   "public"."marketing_performance"."target_audience" ASC
   
+
+-- Question 5:Customers: How Can We Identify Customers with Low Average Spend but High Purchase Frequency?
+SELECT 
+  total_orders,
+  AVG(avg_order_value) AS avg_order_value
+FROM customers
+WHERE total_orders > 10
+  AND avg_order_value < 1000.83
+GROUP BY total_orders
+ORDER BY total_orders;
+
 -- Question 6:Customers: How Can We Identify the Most Valuable Customers to Drive Revenue Growth?
 SELECT
   customer_id,
