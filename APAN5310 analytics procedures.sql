@@ -277,10 +277,11 @@ ORDER BY
   "public"."vendor_deliveries"."store_id" ASC
 
 -- Question 10:Supply Chain: How Can We Detect Product Shelf Life Risk and Delivery Delays?
-/*
-    bp.price,                                        x axis：price
-    bp.shelf_life_days,                              y axis：保质期
-    COUNT(vd.vendor_delivery_id) AS delay_count      bubble size,delay count */
+
+Select
+    bp.price,                                        --x axis：price
+    bp.shelf_life_days,                              --y axis：life days
+    COUNT(vd.vendor_delivery_id) AS delay_count      --bubble size,delay count 
 FROM
     blinkit_products bp
 JOIN
